@@ -1,0 +1,31 @@
+name: BadOmenTrade
+version: '1.0.0'
+main: com.badomentrade.plugin.BadOmenTrade
+api-version: '1.21'
+author: Claude
+description: Añade una probabilidad configurable de recibir Mal Presagio al comerciar con aldeanos.
+
+commands:
+  badomentrade:
+    description: Comando principal del plugin BadOmenTrade
+    usage: "/<command> [reload|chance|info]"
+    aliases: [bot, badomen]
+    permission: badomentrade.admin
+
+permissions:
+  badomentrade.*:
+    description: Otorga todos los permisos del plugin
+    default: op
+    children:
+      badomentrade.admin: true
+      badomentrade.bypass: true
+      badomentrade.notify: true
+  badomentrade.admin:
+    description: Permite usar los comandos administrativos del plugin (reload, chance, info)
+    default: op
+  badomentrade.bypass:
+    description: El jugador nunca recibirá Mal Presagio al comerciar con aldeanos
+    default: false
+  badomentrade.notify:
+    description: Recibe una notificación cuando otro jugador activa el Mal Presagio
+    default: op

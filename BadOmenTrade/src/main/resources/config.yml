@@ -1,0 +1,51 @@
+# ╔══════════════════════════════════════════╗
+# ║            BadOmenTrade - Config          ║
+# ╚══════════════════════════════════════════╝
+#
+# Comandos: /badomentrade reload | chance [valor] | info
+# Permisos: badomentrade.admin | badomentrade.bypass | badomentrade.notify
+
+# Probabilidad (en %) de recibir Mal Presagio al completar un trade con un aldeano.
+# Ejemplo: 5.0 = 5% de probabilidad.
+chance: 5.0
+
+# ¿También cuenta el Mercader Errante (Wandering Trader) como "aldeano"?
+include-wandering-trader: false
+
+# Nivel del efecto Mal Presagio (0 = Nivel I, 1 = Nivel II, etc.)
+amplifier: 0
+
+# Duración del efecto en segundos. Usa -1 para que sea prácticamente permanente
+# (igual que al derrotar a un Illager Capitán).
+duration-seconds: 300
+
+# Mundos donde el efecto NO se activará nunca (déjalo vacío [] para permitir todos).
+disabled-worlds: []
+
+# Sonido reproducido al jugador cuando recibe el efecto.
+sound:
+  enabled: true
+  sound: ENTITY_ILLUSIONER_CAST_SPELL
+  volume: 1.0
+  pitch: 1.0
+
+# Partículas que aparecen alrededor del jugador maldecido.
+particles:
+  enabled: true
+  type: SMOKE
+  amount: 30
+
+# Mensajes mostrados al jugador (soporta códigos de color con '&').
+messages:
+  effect-applied: "&5&l⚠ &d¡Un escalofrío te recorre la espalda! &7(Mal Presagio)"
+
+  title: "&5&lMal Presagio"
+  subtitle: "&7Algo te ha maldecido durante el comercio..."
+
+  actionbar-enabled: true
+  actionbar: "&d✦ &5Has sido maldecido con Mal Presagio &d✦"
+
+  # Si está en true, avisa a los jugadores con permiso 'badomentrade.notify'
+  # cuando otro jugador recibe el efecto.
+  broadcast-others: false
+  broadcast-message: "&7[&5!&7] &e%player% &7ha sido maldecido con &5Mal Presagio &7comerciando con un aldeano."
